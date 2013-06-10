@@ -20,5 +20,12 @@ class ListsController < ApplicationController
       format.html
       format.xml { render :xml => @list }
     end
+  end 
+
+  def destroy 
+    @list = List.find(params[:id])
+    @list.destroy
+    flash[:notice] = "List removed!"
+    redirect_to lists_path
   end
 end
