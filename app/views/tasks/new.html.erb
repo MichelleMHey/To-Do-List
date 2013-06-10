@@ -2,5 +2,9 @@
 <%= form_for @task do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
+<br/>
+  <%= f.label :list %>
+  <%= f.select :list_id, [["Please select a List"]].concat(List.all.map {|item| [item.list_name, item.id]}), :selected => @list_id %>
+<br/>
   <%= f.submit "Submit Task" %>
 <% end %>

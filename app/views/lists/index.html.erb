@@ -1,0 +1,13 @@
+<h1>All Lists</h1>
+<ul>
+  <% for list in @lists %>
+    <li><%= link_to list.list_name, list %></li>
+    <ul>
+      <% for task in list.tasks %>
+        <li><%= task.title %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
+<%= link_to "Add list", new_list_path %>
+

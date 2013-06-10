@@ -1,0 +1,12 @@
+<p>
+  List Name:</b>
+  <%=h @list.list_name %>
+  <ul>
+    <% @list.tasks.each do |task| %>
+      <li><%= task.title %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to("Add Task", {:controller => "tasks", :action => "new", :list => @list }) %> | 
+<%= link_to 'Back', lists_path %>
